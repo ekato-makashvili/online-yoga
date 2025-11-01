@@ -2,14 +2,14 @@
   <div
     class="relative min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 overflow-hidden"
   >
-    <ChakraAnimation class="mt-10" />
-<div class="absolute justify-between top-[5%] sm:top-[30%] w-full flex flex-col md:flex-row md:items-start md:justify-start items-center space-y-4 md:space-y-0 md:space-x-4 px-4 z-10">
-  <StartQuizButton />
-  <VideoLessonsButton  />
-  <Gallery />
-    <ContactButton />
-
+<div class="absolute min-w-full min-h-screen sm:min-h-0 flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-start w-full sm:w-auto gap-4 p-4 sm:mt-10 z-30">
+  <StartQuizButton class="mb-5" />
+  <VideoLessonsButton class="mb-5" />
+  <GalleryButton class="mb-5" />
+  <ContactButton class="mb-5"/>
 </div>
+    <ChakraAnimation/>
+
   </div>
 </template>
 
@@ -18,5 +18,5 @@ import ChakraAnimation from "../components/ChakraAnimation.vue";
 import StartQuizButton from "../components/StartQuizButton.vue";
 import VideoLessonsButton from "../components/VideoLessonsButton.vue";
 import ContactButton from "../components/ContactButton.vue";
-import Gallery from "../components/GalleryButton.vue";
+import GalleryButton from "../components/GalleryButton.vue";
 </script>

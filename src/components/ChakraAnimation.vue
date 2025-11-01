@@ -17,6 +17,7 @@
 import { ref, onMounted, nextTick } from "vue";
 import LotusFigure from './LotusFigure.vue'
 
+
 const chakras = ref([
   { color: "#583d90" },
   { color: "#4a68a9" },
@@ -32,12 +33,30 @@ const targetPositions = ref([]);
 const chaosEnabled = ref(true);
 const lerpSpeed = 0.05;
 
-// --- ფუნქცია: აბრუნებს ეკრანის ზომიდან გამომდინარე ზომას და მანძილს ---
+// --- ფუნქცია: აბრუნებს ეკრანის ზომიდან გამომდინარე ჩაკრის ზომას ---
 const getResponsiveValues = () => {
-  const isSmall = window.innerWidth < 768;
-  const size = isSmall ? 35 : 60;
-  return { size };
+  const width = window.innerWidth;
+
+  let size;
+  let spacingMultiplier;
+
+  if (width < 640) {
+    // 📱 პატარა ეკრანები (sm ქვევით)
+    size = 35;
+    spacingMultiplier = 0.6;
+  } else if (width < 1024) {
+    // 💻 საშუალო ეკრანები (md – lg)
+    size = 50;
+    spacingMultiplier = 0.8;
+  } else {
+    // 🖥️ დიდი ეკრანები (xl და ზევით)
+    size = 70;
+    spacingMultiplier = 1;
+  }
+
+  return { size, spacingMultiplier };
 };
+
 
 // --- განაახლებს Y პოზიციებს ისე, რომ ზემო და ქვემო ჩაკრები დაემთხვოს ფოტოს კიდეებს ---
 const updateYPositions = (imageHeight = 600) => {
@@ -117,7 +136,7 @@ const chakraStyle = (index) => {
     left: `calc(50% + ${pos.x - size / 2}px)`,
     top: `calc(50% + ${pos.y - size / 2}px)`,
     borderRadius: "50%",
-    filter: `brightness(${glow * 2})`,
+    filter: `brightness(${glow * 1.5})`,
     transition: "all 0.05s linear",
     position: "absolute",
     zIndex: 20, // ზედა ფენაზე ჩასმა, რომ ფოტოზე წინ იყოს
