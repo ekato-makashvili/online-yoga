@@ -38,23 +38,19 @@ const getResponsiveValues = () => {
   const width = window.innerWidth;
 
   let size;
-  let spacingMultiplier;
 
   if (width < 640) {
     // 📱 პატარა ეკრანები (sm ქვევით)
     size = 35;
-    spacingMultiplier = 0.6;
   } else if (width < 1024) {
     // 💻 საშუალო ეკრანები (md – lg)
     size = 50;
-    spacingMultiplier = 0.8;
   } else {
     // 🖥️ დიდი ეკრანები (xl და ზევით)
     size = 70;
-    spacingMultiplier = 1;
   }
 
-  return { size, spacingMultiplier };
+  return { size };
 };
 
 
@@ -62,7 +58,7 @@ const getResponsiveValues = () => {
 const updateYPositions = (imageHeight = 600) => {
   const { size } = getResponsiveValues();
   const topY = -imageHeight / 2 + size / 2;
-  const bottomY = imageHeight / 2 - size / 2;
+  const bottomY = imageHeight / 2 - size / 2 ;
   const step = (bottomY - topY) / (chakras.value.length - 1);
   return chakras.value.map((_, i) => topY + i * step);
 };
@@ -134,7 +130,7 @@ const chakraStyle = (index) => {
     width: `${size}px`,
     height: `${size}px`,
     left: `calc(50% + ${pos.x - size / 2}px)`,
-    top: `calc(50% + ${pos.y - size / 2}px)`,
+    top: `calc(50% + ${pos.y - size / 2    }px)`,
     borderRadius: "50%",
     filter: `brightness(${glow * 1.5})`,
     transition: "all 0.05s linear",
