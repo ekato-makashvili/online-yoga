@@ -1,22 +1,21 @@
 <template>
-
   <div class="relative flex justify-center items-center w-full h-screen overflow-hidden">
-    <!-- ლოტუსის ფიგურა (ფონი ან შუაში გამოსახული) -->
+    <!-- ლოტუსის ფიგურა (სტატიკური ფონი შუაში) -->
     <LotusFigure id="lotus-image" />
 
     <!-- ჩაკრების ანიმაცია ზემოდან -->
-  <div
-    v-for="(chakra, index) in chakras"
-    :key="index"
-    class="absolute rounded-full blur-md opacity-80"
-    :style="chakraStyle(index)"
-  ></div>  </div>
+    <div
+      v-for="(chakra, index) in chakras"
+      :key="index"
+      class="absolute rounded-full"
+      :style="chakraStyle(index)"
+    ></div>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted } from "vue";
 import LotusFigure from './LotusFigure.vue'
-
 
 const chakras = ref([
   { color: "#583d90" },
@@ -33,43 +32,41 @@ const targetPositions = ref([]);
 const chaosEnabled = ref(true);
 const lerpSpeed = 0.05;
 
-// --- ფუნქცია: აბრუნებს ეკრანის ზომიდან გამომდინარე ჩაკრის ზომას ---
+// --- სტატიკური ჩაკრის ზომები და საერთო სიმაღლე ---
 const getResponsiveValues = () => {
   const width = window.innerWidth;
+  let size, totalHeight;
 
-  let size;
-
-  if (width < 640) {
-    // 📱 პატარა ეკრანები (sm ქვევით)
+  if (width < 480) {       // პატარა ეკრანები
     size = 35;
-  } else if (width < 1024) {
-    // 💻 საშუალო ეკრანები (md – lg)
+    totalHeight = 400;
+  } 
+  else if (width < 768) { // საშუალო ეკრანები
     size = 50;
-  } else {
-    // 🖥️ დიდი ეკრანები (xl და ზევით)
+    totalHeight = 600;
+  } else if (width < 1024) { // საშუალო ეკრანები
+    size = 60;
+    totalHeight = 750;
+  } else {                  // დიდი ეკრანები
     size = 70;
+    totalHeight = 760;
   }
 
-  return { size };
+  return { size, totalHeight };
 };
 
-
-// --- განაახლებს Y პოზიციებს ისე, რომ ზემო და ქვემო ჩაკრები დაემთხვოს ფოტოს კიდეებს ---
-const updateYPositions = (imageHeight = 600) => {
-  const { size } = getResponsiveValues();
-  const topY = -imageHeight / 2 + size / 2;
-  const bottomY = imageHeight / 2 - size / 2 ;
+// --- სტატიკური Y პოზიციები ჩაკრებისთვის ---
+const getStaticYPositions = () => {
+  const { size, totalHeight } = getResponsiveValues();
+  const topY = -totalHeight / 2 + size / 2;
+  const bottomY = totalHeight / 2 - size / 2;
   const step = (bottomY - topY) / (chakras.value.length - 1);
+
   return chakras.value.map((_, i) => topY + i * step);
 };
 
-// --- ფოტოს სიმაღლის მიხედვით აყალიბებს პოზიციებს ---
-onMounted(async () => {
-  await nextTick();
-
-  // აქ ჩასვი შენი ფოტოს კონტეინერის ref, მაგალითად:
-  const imageHeight = document.querySelector("#lotus-image")?.clientHeight || 600;
-  const yPositions = updateYPositions(imageHeight);
+onMounted(() => {
+  const yPositions = getStaticYPositions();
 
   chakras.value.forEach((c, i) => {
     chakraPositions.value.push({
@@ -104,16 +101,6 @@ onMounted(async () => {
 
   centerCycle();
   setInterval(centerCycle, 10000);
-
-  // Responsive update
-  window.addEventListener("resize", () => {
-    const newHeight = document.querySelector("#lotus-image")?.clientHeight || 600;
-    const newY = updateYPositions(newHeight);
-    chakraPositions.value = chakraPositions.value.map((c, i) => ({
-      ...c,
-      y: newY[i],
-    }));
-  });
 });
 
 // --- ჩაკრის სტილი ---
@@ -130,12 +117,12 @@ const chakraStyle = (index) => {
     width: `${size}px`,
     height: `${size}px`,
     left: `calc(50% + ${pos.x - size / 2}px)`,
-    top: `calc(50% + ${pos.y - size / 2    }px)`,
+    top: `calc(50% + ${pos.y - size / 2}px)`,
     borderRadius: "50%",
     filter: `brightness(${glow * 1.5})`,
     transition: "all 0.05s linear",
     position: "absolute",
-    zIndex: 20, // ზედა ფენაზე ჩასმა, რომ ფოტოზე წინ იყოს
+    zIndex: 20,
   };
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <button
     @click="navigate"
-    class="w-65 h-15 flex items-center justify-center px-6 py-3 rounded-lg shadow-md bg-indigo-800/80 hover:bg-indigo-900 text-gray-100 text-base transition-all"
+    class="flex w-70 h-16 items-center px-6 rounded-lg shadow-md bg-indigo-800/80 hover:bg-indigo-900 text-gray-100 text-base transition-all"
   >
     <img
       v-if="icon"
