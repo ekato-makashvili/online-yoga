@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import QuizGame from "../components/QuizGame.vue";
+import QuizGame from "./QuizGame.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();

@@ -1,13 +1,13 @@
 <template>
   <button
     @click="navigate"
-    class="flex w-60 h-22 items-center justify-center rounded-lg shadow-md bg-indigo-800/95 hover:bg-indigo-900 text-gray-100 text-3xl transition-all"
+    class="flex w-45 h-16 items-center justify-center rounded-lg shadow-md bg-blue-800/95 hover:bg-blue-900 text-gray-100 text-xl transition-all"
   >
     <img
       v-if="icon"
       :src="icon"
       alt="icon"
-      class="inline-block w-10 h-10 mr-3"
+      class="inline-block w-9 h-9 mr-3"
     />
     <span>{{ label }}</span>
   </button>

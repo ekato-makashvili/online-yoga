@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 overflow-hidden"
+    class="relative min-h-screen bg-gradient-to-b from-blue-900 via-sky-900 overflow-hidden"
   >
 <div class="absolute min-w-full min-h-screen flex flex-col justify-center items-center w-full z-30">
 
