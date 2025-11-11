@@ -1,6 +1,6 @@
 <template>
   <QuizTemplate
-    title="გამოიცანი კუნთის სახელწოდება"
+    title="გამოიცანი კუნთის სახელი"
     :questions="asanas"
     @goHome="goHome"
   />
@@ -33,5 +33,4 @@ const asanas = [
   { image: "/muscles/Vastus_lateralis.gif", answer: "ბარძაყის ლატერალური განიერი კუნთი (vastus lateralis)" },
   { image: "/muscles/Vastus_medialis.gif", answer: "ბარძაყის მედიალური განიერი კუნთი (vastus medialis)" },
 ];
-
 </script>

@@ -3,11 +3,11 @@
     class="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-900 via-sky-900 px-3"
   >
     <div
-      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 mt-5 flex flex-col justify-between relative min-h-[750px]"
+      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 sm:mt-15 flex flex-col relative min-h-[600px]"
     >
       <h1
         v-if="!finished"
-        class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-5"
+        class="text-lg md:text-3xl font-bold text-center text-gray-800 mb-5"
       >
         {{ title }}
       </h1>
@@ -21,7 +21,7 @@
       </div>
 
       <!-- Quiz content -->
-      <div v-if="!finished" class="flex flex-col justify-between flex-1">
+      <div v-if="!finished" class="flex flex-col flex-1">
         <div
           class="flex justify-between text-gray-700 text-sm md:text-base mb-4"
         >
@@ -32,7 +32,7 @@
         </div>
 
         <!-- Image -->
-        <div class="flex justify-center mb-5">
+        <div class="flex justify-center mb-4">
           <img
             :src="current.image"
             alt="quiz photo"
@@ -41,11 +41,11 @@
         </div>
 
         <!-- Options -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
           <button
             v-for="(opt, i) in getOptions(current)"
             :key="i"
-            class="py-1 px-2 min-h-[35px] rounded-xl border text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
+            class="py-1 px-2 h-[45px] rounded-xl border border-gray-400 shadow-sm text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
             :class="buttonClass(opt)"
             @click="selectAnswer(opt)"
             :disabled="answered"
@@ -96,7 +96,7 @@
           <button
             v-if="!answered"
             disabled
-            class="px-6 py-2 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
+            class="px-6 py-2 mt-3 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
           >
             შემდეგი →
           </button>
@@ -113,25 +113,25 @@
 
       <!-- Finished screen -->
       <div v-else class="text-center justify-center items-center flex flex-col flex-1">
-          <img class="h-64 w-64" :src="resultImage" alt="img">
-       <h2 class="text-2xl font-bold text-gray-800 p-3">
+               <h2 class="text-2xl font-bold text-gray-800 p-3">
   {{ resultMessage }}
 </h2>
+          <img class="h-36 w-36" :src="resultImage" alt="img">
 
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-700">
           შენი ქულა: <p class="text-3xl"><strong>{{ score }}</strong> / {{ questions.length }}</p> 
         </p>
 
         <button
           @click="restart"
-          class="px-6 my-10 mx-2 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
+          class="px-4 my-10 mx-2 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
         >
           ⟲ ხელახლა ცდა
         </button>
 
         <button
           @click="$emit('goHome')"
-          class="px-6 py-2 bg-blue-400 hover:bg-blue-600 text-white rounded-full shadow-md transition-all"
+          class="px-4 py-2 mb-6 bg-blue-400 hover:bg-blue-600 text-white rounded-full shadow-md transition-all"
         >
           ← მთავარი გვერდზე დაბრუნება
         </button>
