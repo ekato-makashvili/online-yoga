@@ -96,7 +96,7 @@
           <button
             v-if="!answered"
             disabled
-            class="px-6 py-2 mt-3 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
+            class="px-6 py-2 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
           >
             შემდეგი →
           </button>
