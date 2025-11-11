@@ -1,9 +1,9 @@
 <template>
   <div
-    class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 via-sky-900 px-3"
+    class="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-900 via-sky-900 px-3"
   >
     <div
-      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 flex flex-col justify-between relative min-h-[750px]"
+      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 mt-5 flex flex-col justify-between relative min-h-[750px]"
     >
       <h1
         v-if="!finished"
@@ -36,7 +36,7 @@
           <img
             :src="current.image"
             alt="quiz photo"
-            class="w-full max-h-[40vh] object-contain rounded-2xl border border-pink-200 shadow-md"
+            class="w-full max-h-[25vh] object-contain rounded-2xl border border-pink-200 shadow-md"
           />
         </div>
 
@@ -45,7 +45,7 @@
           <button
             v-for="(opt, i) in getOptions(current)"
             :key="i"
-            class="py-1 px-2 min-h-[60px] rounded-xl border text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
+            class="py-1 px-2 min-h-[35px] rounded-xl border text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
             :class="buttonClass(opt)"
             @click="selectAnswer(opt)"
             :disabled="answered"
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Bottom button -->
-        <div class="flex justify-center mt-auto">
+        <div class="flex justify-center">
           <button
             v-if="!answered"
             disabled

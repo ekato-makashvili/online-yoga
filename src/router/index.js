@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-// import VideoLessons from "../components/VideoLessons.vue";
 // import Contact from "../components/Contact.vue";
-// import Gallery from "../components/Gallery.vue";
 import Quizzes from "../components/quizzes/Quizzes.vue";
 import AsanaQuizzes from "../components/quizzes/AsanaQuizzes.vue";
 import MuscleQuizzes from "../components/quizzes/MuscleQuizzes.vue";
@@ -15,12 +13,10 @@ import StandingAsanasQuiz from "../components/quizzes/Asanas/StandingAsanasQuiz.
 import SittingAsanasQuiz from "../components/quizzes/Asanas/SittingAsanasQuiz.vue";
 
 const routes = [
-  // { path: "/lessons", name: "VideoLessons", component: VideoLessons },
   // { path: "/contact", name: "Contact", component: Contact },
-  // { path: "/gallery", name: "Gallery", component: Gallery },
   { path: "/", name: "Home", component: HomeView },
   { path: "/quizzes", name: "Quizzes", component: Quizzes },
-  { path: "/quizzes/asana-quiz", name: "AsanaQuizzes", component: AsanaQuizzes },
+  { path: "/quizzes/asana-quizzes", name: "AsanaQuizzes", component: AsanaQuizzes },
   {
     path: "/quizzes/muscle-quizzes",
     name: "muscleQuizzes",

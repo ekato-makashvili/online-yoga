@@ -6,7 +6,7 @@
         class="my-6"
         label="ასანები"
         icon="/icons/asana-white.png"
-        to="quizzes/asana-quiz"
+        to="quizzes/asana-quizzes"
       />
       <SmallButton
         class="mb-12"
