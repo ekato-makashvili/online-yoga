@@ -19,6 +19,6 @@
 </template>
 
 <script setup>
-import BaseLayout from "./BaseLayout.vue";
-import SmallButton from "./SmallButton.vue";
+import BaseLayout from "../BaseLayout.vue";
+import SmallButton from "../SmallButton.vue";
 </script>

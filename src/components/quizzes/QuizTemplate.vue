@@ -36,7 +36,7 @@
           <img
             :src="current.image"
             alt="quiz photo"
-            class="w-full max-h-[55vh] object-contain rounded-2xl border border-pink-200 shadow-md"
+            class="w-full max-h-[40vh] object-contain rounded-2xl border border-pink-200 shadow-md"
           />
         </div>
 
@@ -45,7 +45,7 @@
           <button
             v-for="(opt, i) in getOptions(current)"
             :key="i"
-            class="py-3 px-4 min-h-[70px] rounded-xl border text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center leading-snug break-words whitespace-pre-wrap relative"
+            class="py-1 px-2 min-h-[60px] rounded-xl border text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
             :class="buttonClass(opt)"
             @click="selectAnswer(opt)"
             :disabled="answered"
@@ -98,7 +98,7 @@
             disabled
             class="px-6 py-2 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
           >
-            შემოწმება
+            შემდეგი →
           </button>
 
           <button
@@ -113,16 +113,18 @@
 
       <!-- Finished screen -->
       <div v-else class="text-center justify-center items-center flex flex-col flex-1">
-          <img src="/icons/yoga.png" alt="img">
-        <h2 class="text-2xl font-bold text-gray-800 p-6">
-         დასრულდა!</h2>
+          <img class="h-64 w-64" :src="resultImage" alt="img">
+       <h2 class="text-2xl font-bold text-gray-800 p-3">
+  {{ resultMessage }}
+</h2>
+
         <p class="text-gray-700 mb-4">
           შენი ქულა: <p class="text-3xl"><strong>{{ score }}</strong> / {{ questions.length }}</p> 
         </p>
 
         <button
           @click="restart"
-          class="px-6 mx-2 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
+          class="px-6 my-10 mx-2 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
         >
           ⟲ ხელახლა ცდა
         </button>
@@ -140,6 +142,31 @@
 
 <script setup>
 import { ref, computed } from "vue";
+
+const resultImage = computed(() => {
+  const percentage = (score.value / props.questions.length) * 100;
+
+  if (percentage < 50) {
+    return "/icons/cry.gif"; // დაბალი შედეგი
+  } else if (percentage < 80) {
+    return "/icons/smile.gif"; // საშუალო შედეგი
+  } else {
+    return "/icons/soul.gif"; // მაღალი შედეგი
+  }
+});
+
+const resultMessage = computed(() => {
+  const percentage = (score.value / props.questions.length) * 100;
+
+  if (percentage < 50) {
+    return "მეტი ვარჯიში გჭირდება";
+  } else if (percentage < 80) {
+    return "კარგად გაართვი თავი";
+  } else {
+    return "შესანიშნავი შედეგია!";
+  }
+});
+
 
 const props = defineProps({
   title: String,
@@ -210,11 +237,11 @@ function restart() {
 // Button coloring
 function buttonClass(opt) {
   if (!answered.value)
-    return selected.value === opt ? "border-2 border-blue-400 bg-blue-50" : "";
+    return selected.value === opt ? "border-1 border-blue-400 bg-blue-50" : "";
   if (opt === current.value.answer)
     return "bg-emerald-600 border-2 border-emerald-600 text-white";
   if (opt === selected.value && selected.value !== current.value.answer)
-    return "bg-rose-600 border-2 border-rose-600 text-white";
+    return "bg-rose-600 border-1 border-rose-600 text-white";
   return "";
 }
 </script>
