@@ -1,7 +1,7 @@
 <template>
   <BaseLayout>
-    <div class="flex flex-col items-center justify-center mt-8">
-      <div class="font-semibold text-2xl text-black/80">ქვიზები</div>
+    <div class="flex flex-col items-center justify-center mt-4">
+      <div class="font-semibold text-2xl text-gray-800">ქვიზები</div>
       <SmallButton
         class="my-6"
         label="ასანები"

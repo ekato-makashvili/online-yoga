@@ -3,7 +3,7 @@
     class="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-900 via-sky-900 px-3"
   >
     <div
-      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 sm:mt-15 flex flex-col relative min-h-[600px]"
+      class="bg-white shadow-xl rounded-3xl w-full max-w-2xl md:max-w-3xl p-5 md:p-8 mt-4 flex flex-col relative h-[95vh]"
     >
       <h1
         v-if="!finished"
@@ -45,7 +45,7 @@
           <button
             v-for="(opt, i) in getOptions(current)"
             :key="i"
-            class="py-1 px-2 h-[45px] rounded-xl border border-gray-400 shadow-sm text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm md:text-lg flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
+            class="py-1 px-2 h-[45px] rounded-xl border border-gray-400 shadow-sm text-gray-800 font-medium transition-all duration-200 hover:bg-pink-50 text-sm flex flex-col justify-center items-center text-center break-words whitespace-pre-wrap relative"
             :class="buttonClass(opt)"
             @click="selectAnswer(opt)"
             :disabled="answered"
@@ -96,7 +96,7 @@
           <button
             v-if="!answered"
             disabled
-            class="px-6 py-2 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
+            class="w-35 h-10 rounded-full shadow-md transition-all text-gray-600 bg-gray-200 cursor-default"
           >
             შემდეგი →
           </button>
@@ -118,13 +118,13 @@
 </h2>
           <img class="h-36 w-36" :src="resultImage" alt="img">
 
-        <p class="text-gray-700">
+        <div class="text-gray-700">
           შენი ქულა: <p class="text-3xl"><strong>{{ score }}</strong> / {{ questions.length }}</p> 
-        </p>
+        </div>
 
         <button
           @click="restart"
-          class="px-4 my-10 mx-2 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
+          class="px-4 py-2 my-10 mx-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full shadow-md transition-all mb-4"
         >
           ⟲ ხელახლა ცდა
         </button>
