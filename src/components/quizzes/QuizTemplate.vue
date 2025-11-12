@@ -36,7 +36,7 @@
           <img
             :src="current.image"
             alt="quiz photo"
-            class="w-full max-h-[25vh] object-contain rounded-2xl border border-pink-200 shadow-md"
+            class="w-full h-[25vh] sm:h-[40vh] object-contain rounded-2xl border border-pink-200 shadow-md"
           />
         </div>
 
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Bottom button -->
-        <div class="flex justify-center">
+        <div class="flex justify-center sm:mt-4 lg:mt-10">
           <button
             v-if="!answered"
             disabled
