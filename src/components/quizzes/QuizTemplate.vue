@@ -36,6 +36,8 @@
           <img
             :src="current.image"
             alt="quiz photo"
+            loading="lazy"
+            decoding="async"
             class="w-full h-[25vh] sm:h-[40vh] object-contain rounded-2xl border border-pink-200 shadow-md"
           />
         </div>
@@ -112,14 +114,20 @@
       </div>
 
       <!-- Finished screen -->
-      <div v-else class="text-center justify-center items-center flex flex-col flex-1">
-               <h2 class="text-2xl font-bold text-gray-800 p-3">
-  {{ resultMessage }}
-</h2>
-          <img class="h-36 w-36" :src="resultImage" alt="img">
+      <div
+        v-else
+        class="text-center justify-center items-center flex flex-col flex-1"
+      >
+        <h2 class="text-2xl font-bold text-gray-800 p-3">
+          {{ resultMessage }}
+        </h2>
+        <img class="h-36 w-36" :src="resultImage" alt="img" />
 
         <div class="text-gray-700">
-          შენი ქულა: <p class="text-3xl"><strong>{{ score }}</strong> / {{ questions.length }}</p> 
+          შენი ქულა:
+          <p class="text-3xl">
+            <strong>{{ score }}</strong> / {{ questions.length }}
+          </p>
         </div>
 
         <button
@@ -166,7 +174,6 @@ const resultMessage = computed(() => {
     return "შესანიშნავი შედეგია!";
   }
 });
-
 
 const props = defineProps({
   title: String,
