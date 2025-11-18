@@ -14,18 +14,18 @@ const router = useRouter();
 const goHome = () => router.push("/");
 
 const asanas = [
-  { image: "/asanas/standing/asana1.PNG", answer: "პადანგუშტასანა" },
-  { image: "/asanas/standing/asana2.JPG", answer: "პადაჰასტასანა" },
-  { image: "/asanas/standing/asana3.PNG", answer: "უტჰიტა ტრიკონასანა" },
-  { image: "/asanas/standing/asana4.PNG", answer: "პარივრიტა ტრიკონასანა" },
-  { image: "/asanas/standing/asana5.PNG", answer: "უტჰიტა პარშვაკონასანა" },
-  { image: "/asanas/standing/asana6.PNG", answer: "პარივრიტა პარშვაკონასანა" },
-  { image: "/asanas/standing/prasarita-padotanasana.gif", answer: "პრასარიტა პადოტანასანა" },
-  { image: "/asanas/standing/asana11.PNG", answer: "პარშვოტანასანა" },
-  { image: "/asanas/standing/uthita-hasta-padangushtasana.gif", answer: "უტჰიტა ჰასტა პადანგუშტასანა" },
-  { image: "/asanas/standing/asana15.JPG", answer: "არდჰა ბადჰა პადმოტანასანა" },
-  { image: "/asanas/standing/asana16.JPG", answer: "უტკატანასანა" },
-  { image: "/asanas/standing/virabhadrasana.gif", answer: "ვირაბჰადრასანა" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467170/asana1_jvhaqn.jpg", answer: "Padangushthasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467170/asana2_p4vnuq.jpg", answer: "Padahastasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467172/asana3_fgq8x0.png", answer: "Utthita Trikonasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467171/asana4_bdkm7q.png", answer: "Parivritta Trikonasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467172/asana5_llq5nu.png", answer: "Utthita Parshvakonasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467172/asana6_gwtdp5.png", answer: "Parivritta Parshvakonasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467174/prasarita-padotanasana_prulpj.gif", answer: "Prasarita Padottanasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467172/asana11_dhcb8f.png", answer: "Parsvottanasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467175/uthita-hasta-padangushtasana_dufe8d.gif", answer: "Utthita Hasta Padangushthasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467173/asana15_ihx4u6.jpg", answer: "Ardha Baddha Padmottanasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467174/asana16_hwudkz.jpg", answer: "Utkatasana" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467176/virabhadrasana_vq7ssk.gif", answer: "Virabhadrasana" },
 
 ];
 </script>

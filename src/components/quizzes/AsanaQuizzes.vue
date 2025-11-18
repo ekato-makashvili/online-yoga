@@ -7,13 +7,13 @@
       <SmallButton
         class="mb-12"
         label="ფეხმდგომელა ასანები"
-        icon="/icons/standingPose.png"
+        icon="https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467157/standingPose_rbl3be.png"
         to="/quizzes/asana-quizzes/standing-asanas"
       />
       <SmallButton
         class="mb-12"
         label="მჯდომარე ასანები"
-        icon="/icons/sittingPose.png"
+        icon="https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467156/sittingPose_vk6upk.png"
         to="/quizzes/asana-quizzes/sitting-asanas"
       />
 

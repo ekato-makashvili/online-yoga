@@ -5,13 +5,13 @@
       <SmallButton
         class="my-6"
         label="ასანები"
-        icon="/icons/asana-white.png"
+        icon="https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467155/asana-white_l90na6.png"
         to="quizzes/asana-quizzes"
       />
       <SmallButton
         class="mb-12"
         label="კუნთები"
-        icon="/icons/muscle.png"
+        icon="https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467157/muscle_vsatgk.png"
         to="quizzes/muscle-quizzes"
       />
     </div>
