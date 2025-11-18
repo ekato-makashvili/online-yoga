@@ -14,8 +14,8 @@ const router = useRouter();
 const goHome = () => router.push("/");
 
 const asanas = [
-  { image: "", answer: "დანდასანა" },
-  { image: "/asanas/sitting/paschimotasana.png", answer: "პაშჩიმოტასანა" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467219/dandasana_mrwmrf.png", answer: "დანდასანა" },
+  { image: "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467219/paschimotasana_sykvxk.png", answer: "პაშჩიმოტასანა" },
 
 ];
 </script>

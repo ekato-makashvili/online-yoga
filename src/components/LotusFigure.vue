@@ -2,7 +2,7 @@
   <div class="relative z-0 flex flex-col items-center">
     <img
       id="lotus-image"
-      src="/asanas/lotus-full-black.png"
+      src="https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467253/lotus-full-black_shuzij.png"
       alt="Lotus Pose"
       class="w-180 opacity-90"
     />

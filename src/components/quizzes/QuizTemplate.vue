@@ -155,11 +155,11 @@ const resultImage = computed(() => {
   const percentage = (score.value / props.questions.length) * 100;
 
   if (percentage < 50) {
-    return "/icons/cry.gif"; // დაბალი შედეგი
+    return "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467157/cry_egelzj.gif"; // დაბალი შედეგი
   } else if (percentage < 80) {
-    return "/icons/smile.gif"; // საშუალო შედეგი
+    return "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467158/smile_bma5gr.gif"; // საშუალო შედეგი
   } else {
-    return "/icons/soul.gif"; // მაღალი შედეგი
+    return "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763467164/soul_xvhlgx.gif"; // მაღალი შედეგი
   }
 });
 
