@@ -14,6 +14,45 @@ const router = useRouter();
 const goHome = () => router.push("/");
 
 const asanas = [
-
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491776/anconeus_rz3n8i.gif",
+    answer: "იდაყვის კუნთი (anconeus)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491786/Biceps_brachii_muscle_-_animation03_hebntv.gif",
+    answer: "მხრის ორთავა კუნთი (biceps brachii)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491776/Brachialis_muscle_-_animation03_ebja8y.gif",
+    answer: "მხრის კუნთი (brachialis)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491780/Coracobrachialis_muscle_-_animation02_nq7xtg.gif",
+    answer: "ნისკარტ-მხრის კუნთი (coracobrachialis)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491780/Deltoid_muscle_animation4_hp694d.gif",
+    answer: "დელტისებრი კუნთი (deltoideus)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491782/Teres_major_muscle_animation2_jv0s3v.gif",
+    answer: "დიდი მრგვალი კუნთი (teres major)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491788/Teres_minor_muscle_animation2_y1f1w8.gif",
+    answer: "მცირე მრგვალი კუნთი (teres minor)",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491782/Triceps_brachii_muscle_-_animation02_nrpqtd.gif",
+    answer: "მხრის სამთავა კუნთი (triceps brachii)",
+  },
 ];
 </script>
