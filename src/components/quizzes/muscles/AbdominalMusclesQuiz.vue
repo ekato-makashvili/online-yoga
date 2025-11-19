@@ -16,32 +16,32 @@ const goHome = () => router.push("/");
 const asanas = [
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494581/Obliquus_abdominis_externus_x9yynq.jpg",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550643/external_oblique_muscle_mmt465.jpg",
     answer: "მუცლის გარეთა ირიბი კუნთი (Obliquus abdominis externus)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494580/Obliquus_abdominis_internus_bgafkv.jpg",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550184/internal-oblique.jpg_kqyuyd.png",
     answer: "მუცლის შიგნითა ირიბი კუნთი (Obliquus abdominis internus)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494580/Transversus_abdominis_uefhq5.jpg",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550184/Transversus_abdominis_tamzt2.png",
     answer: "მუცლის განივი კუნთი (Transversus abdominis)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494580/Rectus_abdominis_uztpwz.jpg",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550184/rectus-abdominis_bspgtd.png",
     answer: "მუცლის სწორი კუნთი (Rectus abdominis)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494580/Pyramidalis_okg8pk.jpg",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550183/Pyramidalis_qj0wgj.png",
     answer: "პირამიდული კუნთი (Pyramidalis)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763494581/Quadratus_lumborum_xg69r9.png",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763550183/Quadratus_lumborum_iv2nlw.jpg",
     answer: "წელის კვადრატული კუნთი (Quadratus lumborum)",
   },
 ];
