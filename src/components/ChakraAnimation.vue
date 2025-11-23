@@ -43,13 +43,13 @@ const getResponsiveValues = () => {
   } 
   else if (width < 768) { // საშუალო ეკრანები
     size = 50;
-    totalHeight = 600;
+    totalHeight = 580;
   } else if (width < 1024) { // საშუალო ეკრანები
     size = 60;
-    totalHeight = 750;
+    totalHeight = 600;
   } else {                  // დიდი ეკრანები
-    size = 70;
-    totalHeight = 760;
+    size = 65;
+    totalHeight = 650;
   }
 
   return { size, totalHeight };

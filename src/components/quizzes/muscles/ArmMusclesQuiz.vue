@@ -16,7 +16,7 @@ const goHome = () => router.push("/");
 const asanas = [
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491776/anconeus_rz3n8i.gif",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763872180/anconeus_gue2ht.gif",
     answer: "იდაყვის კუნთი (anconeus)",
   },
   {
@@ -41,12 +41,12 @@ const asanas = [
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491782/Teres_major_muscle_animation2_jv0s3v.gif",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763872105/Teres_major_muscle_animation2_bdwdcw.gif",
     answer: "დიდი მრგვალი კუნთი (teres major)",
   },
   {
     image:
-      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763491788/Teres_minor_muscle_animation2_y1f1w8.gif",
+      "https://res.cloudinary.com/dmr48sbbr/image/upload/v1763872061/Teres_minor_muscle_animation2_iphu1v.gif",
     answer: "მცირე მრგვალი კუნთი (teres minor)",
   },
   {
